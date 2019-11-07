@@ -1,0 +1,64 @@
+{
+  "quiz_questions": [
+    {
+      "id": 1,
+      "instruction_text": "How many outs are there in a baseball inning?",
+      "answer_options": ["3", "6", "9", "27"],
+      "answer": "6"
+    },
+    {
+      "id": 2,
+      "instruction_text": "Before Mt. Everest was discovered, what was the highest mountain in the world?",
+      "answer_options": ["Mt. Fuji", "Mt. Everest", "Mt. McKinley", "Mt. Blanc"],
+      "answer": "Mt. Everest"
+    },
+    {
+      "id": 3,
+      "instruction_text": "If there are five apples, and you take away three, how many do you have?",
+      "answer_options": ["0", "2", "3", "5"],
+      "answer": "3"
+    },
+    {
+      "id": 4,
+      "instruction_text": "Imagine this: you're on a slowly sinking ship. There are 3 targer sharks to the left and 6 killer whales to the right. What will you do to survive?",
+      "answer_options": ["Swim to the left", "Swim to the right", "Stay put", "Stop imagining"],
+      "answer": "Stop imagining"
+    },
+    {
+      "id": 5,
+      "instruction_text": "What color is the male purple finch?",
+      "answer_options": ["Yellow", "Purple", "Red", "Brown"],
+      "answer": "Red"
+    },
+    {
+      "id": 6,
+      "instruction_text": "Okay, now what color is the female purple finch?",
+      "answer_options": ["Yellow", "Purple", "Red", "Brown"],
+      "answer": "Brown"
+    },
+    {
+      "id": 7,
+      "instruction_text": "Divide 30 by half and add 10",
+      "answer_options": ["25", "50", "70", "I know this is a trick question, so NONE! Take that!"],
+      "answer": "70"
+    },
+    {
+      "id": 8,
+      "instruction_text": "If you were running a race and you passed the person in 2nd place, what place would you be in now?",
+      "answer_options": ["1st", "2nd", "3rd", "4th"],
+      "answer": "2nd"
+    },
+    {
+      "id": 9,
+      "instruction_text": "How many months have 28 days?",
+      "answer_options": ["0", "1", "12", "Depends if there's a leap year."],
+      "answer": "12"
+    },
+    {
+      "id": 10,
+      "instruction_text": "If a plane crashes on the border between the US and Canada, where do they bury the survivors?",
+      "answer_options": ["US", "Canada", "They don't bury them.", "Can be buried in either."],
+      "answer": "They don't bury them."
+    }
+  ]
+}
