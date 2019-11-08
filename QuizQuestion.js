@@ -1,44 +1,87 @@
 import React, {Component} from 'react'
-import QuizQuestionButton from './QuizQuestionButton.js'
+import QuizQuestion from './QuizQuestion.js'
+import QuizEnd from './QuizEnd.js'
 
-class QuizQuestion extends Component {
-  constructor(props) {
+let quizData = require('./quiz_data.json');
+
+class Quiz extends Component {
+
+  constructor(props){
     super(props);
-    this.state = {incorrectAnswer: false,
-                  guessedIncorrectly: false};
+
+    let randomIndexs = this.createRandomInts(quizData.quiz_questions.length);
+
+    this.state = {random_Indexs: randomIndexs,
+                  quiz_position: 1,
+                  quiz_correct: 0}
   }
 
-  handleClick(buttonText) {
-    if (buttonText === this.props.quiz_question.answer)
+  createRandomInts(length)
+  {
+      let quizPositions = [];
+
+      for(let i = 0; i < length; i++){
+        quizPositions[i] = i;
+      }
+
+      quizPositions = this.shuffle(quizPositions);
+      return quizPositions;
+  }
+
+  shuffle(array)
+  {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex)
     {
-        this.props.showNextQuestionHandler(this.state.guessedIncorrectly);
-        this.setState({incorrectAnswer: false});
-        this.setState({guessedIncorrectly: false});
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
-    else {
-      this.setState({incorrectAnswer: true});
-      this.setState({guessedIncorrectly: true});
-    }
+
+    return array;
   }
 
-  render() {
-    this.props.quiz_question.answer_options = this.props.shuffle(this.props.quiz_question.answer_options);
+  showNextQuestion(guessedIncorrectly){
+    this.setState((state) => {
+      if (guessedIncorrectly)
+        return {quiz_position: state.quiz_position + 1}
+      else {
+        return {quiz_position: state.quiz_position + 1,
+                quiz_correct: state.quiz_correct + 1}
+      }
+    })
+  }
+
+  handleResetClick() {
+      this.setState((state) => {
+        return {random_Indexs: this.shuffle(state.random_Indexs),
+        quiz_position: 1,
+        quiz_correct: 0}
+      })
+  }
+
+  render(){
+    const isQuizEnd = (this.state.quiz_position - 1 === quizData.quiz_questions.length);
+    const quizQuestionNumber = quizData.quiz_questions[this.state.random_Indexs[this.state.quiz_position - 1]];
     return (
-      <main>
-          <section>
-            <p className="QuizQuestion">{this.props.quiz_question.instruction_text}</p>
-          </section>
-          <section className="buttons">
-            <ul>
-              {this.props.quiz_question.answer_options.map((answer_option, index) => {
-                return <QuizQuestionButton clickHandler={this.handleClick.bind(this)} key={index} button_text = {answer_option} />
-              })}
-            </ul>
-          </section>
-          {this.state.incorrectAnswer ? <p className="error">Sorry, but you got it wrong!</p> : null}
-        </main>
-      )
+      <div>
+        <div className= "QuizInfo">
+          {isQuizEnd ? <p className = "QuestionMarker">Quiz Finished!</p>  : <p className = "QuestionMarker"> Question: {this.state.quiz_position}</p>}
+          <p className = "ScoreDisplay">Number Correct: {this.state.quiz_correct}</p>
+        </div>
+        {isQuizEnd ? <QuizEnd resetClickHandler = {this.handleResetClick.bind(this)}/> :
+        <QuizQuestion showNextQuestionHandler = {this.showNextQuestion.bind(this)} quiz_question = {quizQuestionNumber} shuffle = {this.shuffle.bind(this)}/>
+      }
+      </div>
+    )
   }
 }
 
-export default QuizQuestion
+export default Quiz;
