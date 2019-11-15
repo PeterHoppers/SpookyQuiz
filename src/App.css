@@ -3,11 +3,12 @@ body {
   background-image:
     linear-gradient(
       to top right,
-      #AAcAcc, #eff6f7
+      #00380e, #005615
       );
   background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: Georgia, "Trebuchet MS", sans-serif;
+  color: white;
 }
 
 ul {
@@ -17,18 +18,17 @@ ul {
 }
 
 a {
-  color: black;
+  color: white;
 }
 
 a:visited {
-  color: black;
+  color: white;
 }
 
 button
 {
   padding: 0 15px;
   margin: 0.6em auto;
-  background-color: transparent;
   border-width: 2.7px;
   font-size: 1.5em;
   display: block;
