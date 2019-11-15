@@ -7,10 +7,10 @@ class QuizEnd extends Component {
 
   render() {
     return(
-      <div>
+      <div className="ResetQuiz">
           <p>Thanks for playing!</p>
           <a onClick = {this.handleResetClick.bind(this)} href=''>Reset Quiz</a>
-        </div>
+      </div>
   )}
 }
 

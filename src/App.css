@@ -62,7 +62,27 @@ button:hover{
 }
 
 .QuestionMarker {
+  display: flex;
+  position: absolute;
+}
 
+.TimerBackground{
+  background-color: grey;
+  height: inherit;
+  width: 65%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 30px;
+}
+
+.Timer {
+  background-color: orange;
+  height: inherit;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 30px;
 }
 
 .ResetQuiz {
@@ -73,6 +93,7 @@ button:hover{
 
 .QuizInfo {
   display: flex;
+  height: 50px;
   margin: 10 auto 0 auto;
   padding: 0 20px;
   font-size: 19px;

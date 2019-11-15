@@ -24,7 +24,7 @@ class QuizQuestion extends Component {
       setTimeout(() => {
           this.setState({canAnswer: true,
                         incorrectAnswer: false});
-      }, 3000)
+      }, 2000)
     }
   }
 
