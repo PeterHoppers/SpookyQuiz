@@ -69,20 +69,23 @@ class Quiz extends Component {
       this.setState({quiz_position: 1});
   }
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   render(){
     const isQuizEnd = (this.state.quiz_position - 1 === quizData.quiz_questions.length || this.state.timer_expired);
-    const quizQuestion = quizData.quiz_questions[this.state.random_Indexs[this.state.quiz_position - 1]];
+    const quizQuestion = quizData.quiz_questions[this.getRandomInt(quizData.quiz_questions.length)];
     this.shuffle(quizQuestion.answer_options);
     return (
       <div>
         <div className= "QuizInfo">
-          {isQuizEnd ? <p className = "QuestionMarker">Quiz Finished!</p>  : <p className = "QuestionMarker"> Question: {this.state.quiz_position}</p>}
-          <p className = "ScoreDisplay">Number Correct: {this.state.quiz_correct}</p>
           <div className="TimerBackground">
             <Timer finishedCountdown = {this.timerExpire.bind(this)} seconds={30}/>
           </div>
         </div>
-        {isQuizEnd ? <QuizEnd resetClickHandler = {this.handleResetClick.bind(this)}/> :
+        {isQuizEnd ? "" : <h1 className = "QuestionMarker">Question: {this.state.quiz_position}</h1> }
+        {isQuizEnd ? <QuizEnd resetClickHandler = {this.handleResetClick.bind(this)} numberAnswered = {this.state.quiz_position - 1}/> :
         <QuizQuestion showNextQuestionHandler = {this.showNextQuestion.bind(this)} quiz_question = {quizQuestion}/>
       }
       </div>

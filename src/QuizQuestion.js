@@ -26,7 +26,7 @@ class QuizQuestion extends Component {
                         incorrectAnswer: false});
       }, 2000)
     }
-  }
+  }  
 
   render() {
     return (
