@@ -65,7 +65,8 @@ class Quiz extends Component {
 
   render(){
     const isQuizEnd = (this.state.quiz_position - 1 === quizData.quiz_questions.length);
-    const quizQuestionNumber = quizData.quiz_questions[this.state.random_Indexs[this.state.quiz_position - 1]];
+    const quizQuestion = quizData.quiz_questions[this.state.random_Indexs[this.state.quiz_position - 1]];
+    this.shuffle(quizQuestion.answer_options);
     return (
       <div>
         <div className= "QuizInfo">
@@ -73,7 +74,7 @@ class Quiz extends Component {
           <p className = "ScoreDisplay">Number Correct: {this.state.quiz_correct}</p>
         </div>
         {isQuizEnd ? <QuizEnd resetClickHandler = {this.handleResetClick.bind(this)}/> :
-        <QuizQuestion showNextQuestionHandler = {this.showNextQuestion.bind(this)} quiz_question = {quizQuestionNumber}/>
+        <QuizQuestion showNextQuestionHandler = {this.showNextQuestion.bind(this)} quiz_question = {quizQuestion}/>
       }
       </div>
     )

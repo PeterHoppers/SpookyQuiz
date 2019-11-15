@@ -4,9 +4,10 @@ import QuizQuestionButton from './QuizQuestionButton.js'
 class QuizQuestion extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {incorrectAnswer: false,
-                  guessedIncorrectly: false};
+                  guessedIncorrectly: false,
+                  canAnswer: true};
   }
 
   handleClick(buttonText) {
@@ -19,6 +20,11 @@ class QuizQuestion extends Component {
     else {
       this.setState({incorrectAnswer: true});
       this.setState({guessedIncorrectly: true});
+      this.setState({canAnswer: false});
+      setTimeout(() => {
+          this.setState({canAnswer: true,
+                        incorrectAnswer: false});
+      }, 3000)
     }
   }
 
@@ -31,7 +37,7 @@ class QuizQuestion extends Component {
           <section className="buttons">
             <ul>
               {this.props.quiz_question.answer_options.map((answer_option, index) => {
-                return <QuizQuestionButton clickHandler={this.handleClick.bind(this)} key={index} button_text = {answer_option} />
+                return <QuizQuestionButton clickHandler={this.handleClick.bind(this)} key={index} button_text = {answer_option} canAnswer= {this.state.canAnswer} />
               })}
             </ul>
           </section>
