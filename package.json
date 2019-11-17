@@ -1,23 +1,20 @@
 {
   "name": "build-a-quiz-component-with-react",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
+  "homepage": "https://peterhoppers.github.io/SpookyQuiz/",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-scripts": "1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace || true",
-    "test:module1": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module1 || true",
-    "test:module2": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module2 || true",
-    "test:module3": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module3 || true",
-    "test:module4": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module4 || true",
-    "test:module5": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module5 || true",
-    "test:module6": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module6 || true",
-    "test:module7": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --noStackTrace module7 || true",
     "eject": "react-scripts eject"
   },
   "jest": {
