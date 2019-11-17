@@ -6,27 +6,24 @@ class QuizQuestion extends Component {
     super(props);
 
     this.state = {incorrectAnswer: false,
-                  guessedIncorrectly: false,
                   canAnswer: true};
   }
 
   handleClick(buttonText) {
     if (buttonText === this.props.quiz_question.answer)
     {
-        this.props.showNextQuestionHandler(this.state.guessedIncorrectly);
+        this.props.showNextQuestionHandler();
         this.setState({incorrectAnswer: false});
-        this.setState({guessedIncorrectly: false});
     }
     else {
       this.setState({incorrectAnswer: true});
-      this.setState({guessedIncorrectly: true});
       this.setState({canAnswer: false});
       setTimeout(() => {
           this.setState({canAnswer: true,
                         incorrectAnswer: false});
       }, 2000)
     }
-  }  
+  }
 
   render() {
     return (

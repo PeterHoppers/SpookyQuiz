@@ -4,22 +4,13 @@ class Timer extends Component{
   constructor(props){
     super(props);
 
-    this.state = {seconds: props.seconds}
+    this.state = {seconds: props.seconds,
+                  width: 100}
 
     this.maxSeconds = props.seconds;
-    this.width = 100;
-    this.timer = 0;
-    this.startTimer = this.startTimer.bind(this);
+
     this.countDown = this.countDown.bind(this);
-
-    this.startTimer();
-  }
-
-
-  startTimer() {
-    if (this.timer === 0 && this.state.seconds > 0) {
-      this.timer = setInterval(this.countDown, 1000);
-    }
+    this.timer = setInterval(this.countDown, 1000);
   }
 
   countDown() {
@@ -27,12 +18,11 @@ class Timer extends Component{
     let seconds = this.state.seconds - 1;
     this.setState({
       seconds: seconds,
+      width: 100 * (seconds / this.maxSeconds),
     });
 
-    this.width = 100 * (seconds / this.maxSeconds);
-
     // Check if we're at zero.
-    if (seconds === -1) {
+    if (seconds === 0) {
       clearInterval(this.timer);
       this.props.finishedCountdown();
     }
@@ -40,7 +30,7 @@ class Timer extends Component{
   render()
   {
     return(
-      <div className="Timer" style= {{width: `${this.width}%`}}>
+      <div className="Timer" style= {{width: `${this.state.width}%`}}>
       </div>
     );
   }
