@@ -1,13 +1,24 @@
 {
-  "name": "build-a-quiz-component-with-react",
-  "version": "0.2.0",
+  "name": "SpookyQuiz",
+  "version": "0.1.0",
   "private": true,
   "homepage": "https://peterhoppers.github.io/SpookyQuiz/",
   "dependencies": {
-    "gh-pages": "^2.1.1",
     "react": "16.2.0",
-    "react-dom": "16.2.1",
-    "react-scripts": "1.1.1"
+    "react-dom": "16.2.1"
+  },
+  "devDependencies" : {
+    "gh-pages": "^2.1.1",
+    "react-scripts": "1.1.1",
+    "babylon": "6.18.0",
+    "chai": "4.1.2",
+    "chai-enzyme": "0.8.0",
+    "cross-env": "5.1.4",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "esprima": "4.0.0",
+    "react-test-renderer": "16.3.1",
+    "sinon": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,16 +45,5 @@
     "coverageReporters": [
       "json"
     ]
-  },
-  "devDependencies": {
-    "babylon": "6.18.0",
-    "chai": "4.1.2",
-    "chai-enzyme": "0.8.0",
-    "cross-env": "5.1.4",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-16": "1.1.1",
-    "esprima": "4.0.0",
-    "react-test-renderer": "16.3.1",
-    "sinon": "5.0.1"
-  }
+  }  
 }
