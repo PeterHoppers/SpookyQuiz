@@ -8,7 +8,7 @@ class QuizQuestionButton extends Component{
   render()  {
     return (
       <li>
-        <button onClick={this.handleClick.bind(this)} disabled={!this.props.canAnswer}>{this.props.button_text}</button>
+        <button className="question-button" onClick={this.handleClick.bind(this)} disabled={!this.props.canAnswer}>{this.props.button_text}</button>
       </li>
     )
   }

@@ -7,10 +7,10 @@ class QuizEnd extends Component {
 
   render() {
     return(
-      <div className="ResetQuiz">
+      <div className="reset-quiz">
           <p>Thanks for playing!</p>
           <p>You answered {this.props.numberAnswered} questions correct!</p>
-          <a href=''>Reset Quiz</a>
+          <a href=''><button className="reset-button">Reset Quiz</button></a>
       </div>
   )}
 }

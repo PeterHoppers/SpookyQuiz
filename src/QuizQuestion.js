@@ -27,10 +27,8 @@ class QuizQuestion extends Component {
 
   render() {
     return (
-      <main>
-          <section>
-            <p className="QuizQuestion">{this.props.quiz_question.instruction_text}</p>
-          </section>
+      <main>          
+          <h1 className="quiz-question">{this.props.quiz_question.instruction_text}</h1>
           <section className="buttons">
             <ul>
               {this.props.quiz_question.answer_options.map((answer_option, index) => {

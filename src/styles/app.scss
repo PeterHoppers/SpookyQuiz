@@ -1,0 +1,127 @@
+body {
+	height: 100vh;
+	background-color: #eb6123;
+	font-family: Chiller, "Trebuchet MS", sans-serif;
+	color: black;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a {
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+button {
+	font-family: "Trebuchet MS", sans-serif;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 0 15px;
+	cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+	background-color: #dddddd;
+}
+
+.question-button {
+	width: 125px;	
+	min-width: 30%;
+	margin: 0.6em auto;
+	border-width: 2.7px;
+	font-size: 2em;
+	display: block;
+	outline: none;
+}
+
+.question-button:hover:not(:disabled) {
+	background-color: #dddddd;
+}
+
+.question-button:disabled {
+	cursor: not-allowed;
+}
+
+.reset-button {
+	font-size: 1em;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.quiz-info {
+	display: flex;
+	justify-content: center;
+	height: 40px;
+	margin: 10 auto 0 auto;
+	padding: 0 20px;
+	background-color: #0f0704;
+}
+
+.timer-background {
+	display: flex;
+	justify-content: flex-end;
+	background-color: grey;
+	height: inherit;
+	width: 85%;
+	max-width: 1080px;
+	position: relative;
+}
+
+.timer {
+	background-color: rgb(16, 110, 16);
+	height: inherit;
+}
+
+.timer.warning {
+	background-color: yellow;
+}
+
+.timer.danger {
+	background-color: rgb(189, 30, 30);
+
+}
+
+.question-marker {
+	font-family: "Trebuchet MS", sans-serif;
+	width: 95%;
+	text-align: right;
+	margin-right: 5%;
+	font-size: 1.25em;
+}
+
+.quiz-question {
+	font-size: 3em;
+	margin: 0px 0px 15px;
+	text-align: center;
+}
+
+.error {
+	color: #351A17;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 2em;
+}
+
+.reset-quiz {
+	font-size: 25px;
+	display: block;
+	text-align: center;
+}
+
+.score-display {
+	position: absolute;
+	right: 0;
+	padding-right: inherit;
+}

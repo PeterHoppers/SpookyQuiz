@@ -54,12 +54,12 @@ class Quiz extends Component {
     this.shuffle(quizQuestion.answer_options);
     return (
       <div>
-        <div className= "QuizInfo">
-          <div className="TimerBackground">
+        <div className= "quiz-info">
+          <div className="timer-background">
             <Timer finishedCountdown = {this.timerExpire.bind(this)} seconds={30}/>
           </div>
         </div>
-        {isQuizEnd ? "" : <h1 className = "QuestionMarker">Question: {this.state.quiz_position}</h1> }
+        {isQuizEnd ? "" : <p className = "question-marker">Question #{this.state.quiz_position}</p> }
         {isQuizEnd ? <QuizEnd numberAnswered = {this.state.quiz_position - 1}/> :
         <QuizQuestion showNextQuestionHandler = {this.showNextQuestion.bind(this)} quiz_question = {quizQuestion}/>
       }
