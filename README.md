@@ -1,5 +1,3 @@
-# Build a Quiz Component with React
+# Spookiest Quiz In React
 
-This repo contains the code for the Pluralsight Project "Build a Quiz Component with React," located here: https://app.pluralsight.com/projects/build-a-quiz-component-with-react/
-
-This project was generated with `create-react-app` version 1.5.2. Extras were modified by Peter Hoppe
+Wanting to make a simple quiz game based around trying to answer questions fast. Simpliest and most terrifying thing I could think of was an endless wave of math problems.
