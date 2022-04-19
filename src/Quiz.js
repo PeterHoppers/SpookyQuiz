@@ -7,15 +7,14 @@ let quizData = require('./quiz_data.json');
 
 class Quiz extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {quiz_position: 1,
                   timer_expired: false}
   }
 
-  shuffle(array)
-  {
+  shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
@@ -34,13 +33,13 @@ class Quiz extends Component {
     return array;
   }
 
-  showNextQuestion(){
+  showNextQuestion() {
     this.setState((state) => {
       return {quiz_position: state.quiz_position + 1}
     })
   }
 
-  timerExpire(){
+  timerExpire() {
     this.setState({timer_expired: true});
   }
 
@@ -48,7 +47,7 @@ class Quiz extends Component {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  render(){
+  render() {
     const isQuizEnd = this.state.timer_expired;
     const quizQuestion = quizData.quiz_questions[this.getRandomInt(quizData.quiz_questions.length)];
     this.shuffle(quizQuestion.answer_options);

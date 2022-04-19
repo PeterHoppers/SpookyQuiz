@@ -41,8 +41,7 @@ class Timer extends Component{
 
     
   }
-  render()
-  {
+  render() {
     return(
       <div className={this.state.timerclass} style= {{width: `${this.state.width}%`}}>
       </div>
